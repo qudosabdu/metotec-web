@@ -27,7 +27,7 @@ const Footer = () => {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h4 className="text-lg font-bold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-bold mb-4 text-white">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="#" className="text-gray-400 hover:text-[var(--color-brand-blue)] transition-colors">
@@ -54,7 +54,7 @@ const Footer = () => {
 
           {/* Column 3: Contact */}
           <div>
-            <h4 className="text-lg font-bold mb-4">Contact</h4>
+            <h4 className="text-lg font-bold mb-4 text-white">Contact</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2 text-gray-400">
                 <Phone className="w-4 h-4" />
@@ -73,7 +73,7 @@ const Footer = () => {
 
           {/* Column 4: Social Media */}
           <div>
-            <h4 className="text-lg font-bold mb-4">Follow Us</h4>
+            <h4 className="text-lg font-bold mb-4 text-white">Follow Us</h4>
             <div className="flex items-center gap-3">
               <a
                 href="#"

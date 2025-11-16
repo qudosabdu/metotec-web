@@ -1,5 +1,5 @@
 import Header from "@/components/sections/header";
-import PrivacyModal from "@/components/overlays/privacy-modal";
+// import PrivacyModal from "@/components/overlays/privacy-modal";
 import Hero from "@/components/sections/hero";
 import ThreeColumnFeatures from "@/components/sections/three-column-features";
 import ProductRangeGrid from "@/components/sections/product-range-grid";
@@ -31,7 +31,7 @@ export default function Home() {
       </main>
 
       <Footer />
-      <PrivacyModal />
+      {/* <PrivacyModal /> */}
     </div>
   );
 }
