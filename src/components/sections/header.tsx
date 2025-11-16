@@ -29,69 +29,74 @@ const Header = () => {
         <div className="container">
           <div className="flex items-center justify-between py-4">
             {/* Logo */}
-            <div className="flex items-center">
+              <div className="flex items-center">
               <img 
                 src="/LOGO.jpeg" 
                 alt="Logo" 
-                className="h-12 md:h-16 w-auto object-contain"
+                className="h-12 md:h-16 w-auto object-contain transform md:scale-110 lg:scale-125"
               />
             </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-6">
               <a
-                href="#"
+                href="/"
                 className="text-sm font-bold uppercase text-[var(--color-medium-gray)] hover:text-[var(--color-brand-blue)] transition-colors"
               >
                 Home
               </a>
               <a
-                href="#"
+                href="/firma"
                 className="text-sm font-bold uppercase text-[var(--color-medium-gray)] hover:text-[var(--color-brand-blue)] transition-colors"
               >
                 Firma
               </a>
               <a
-                href="#"
+                href="/was-kauft-metotec"
                 className="text-sm font-bold uppercase text-[var(--color-medium-gray)] hover:text-[var(--color-brand-blue)] transition-colors"
               >
                 Was kauft Metotec?
               </a>
               <a
-                href="#"
+                href="/kontakt"
                 className="text-sm font-bold uppercase text-[var(--color-medium-gray)] hover:text-[var(--color-brand-blue)] transition-colors"
               >
                 Kontakt
               </a>
               
               {/* Products Dropdown */}
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setActiveDropdown('products')}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="text-sm font-bold uppercase text-[var(--color-medium-gray)] hover:text-[var(--color-brand-blue)] transition-colors flex items-center gap-1">
+                <a
+                  href="/products"
+                  className="text-sm font-bold uppercase text-[var(--color-medium-gray)] hover:text-[var(--color-brand-blue)] transition-colors flex items-center gap-1"
+                  aria-haspopup="true"
+                  aria-expanded={activeDropdown === 'products' ? 'true' : 'false'}
+                >
                   Products
                   <ChevronDown className="w-4 h-4" />
-                </button>
+                </a>
                 {activeDropdown === 'products' && (
-                  <div className="absolute top-full left-0 mt-2 bg-white shadow-lg border border-[var(--color-border-gray)] min-w-[220px] py-2">
-                    <a href="#" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
+                  <div className="absolute top-full left-0 mt-0 bg-white shadow-lg border border-[var(--color-border-gray)] min-w-[220px] py-2 z-50">
+                    <a href="/products/armaturen" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
                       Armaturen
                     </a>
-                    <a href="#" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
+                    <a href="/products/elektromotoren" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
                       Elektromotoren
                     </a>
-                    <a href="#" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
+                    <a href="/products/gleichstrommotoren" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
                       Gleichstrommotoren
                     </a>
-                    <a href="#" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
+                    <a href="/products/hochspannungsmotoren" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
                       Hochspannungsmotoren
                     </a>
-                    <a href="#" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
+                    <a href="/products/getriebemotoren" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
                       Getriebemotoren
                     </a>
-                    <a href="#" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
+                    <a href="/products/getriebe" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
                       Getriebe
                     </a>
                   </div>
@@ -99,33 +104,38 @@ const Header = () => {
               </div>
 
               {/* Services Dropdown */}
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setActiveDropdown('services')}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="text-sm font-bold uppercase text-[var(--color-medium-gray)] hover:text-[var(--color-brand-blue)] transition-colors flex items-center gap-1">
+                <a
+                  href="/services"
+                  className="text-sm font-bold uppercase text-[var(--color-medium-gray)] hover:text-[var(--color-brand-blue)] transition-colors flex items-center gap-1"
+                  aria-haspopup="true"
+                  aria-expanded={activeDropdown === 'services' ? 'true' : 'false'}
+                >
                   Services
                   <ChevronDown className="w-4 h-4" />
-                </button>
+                </a>
                 {activeDropdown === 'services' && (
-                  <div className="absolute top-full left-0 mt-2 bg-white shadow-lg border border-[var(--color-border-gray)] min-w-[220px] py-2">
-                    <a href="#" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
+                  <div className="absolute top-full left-0 mt-0 bg-white shadow-lg border border-[var(--color-border-gray)] min-w-[220px] py-2 z-50">
+                    <a href="/services/elektromaterial" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
                       Elektromaterial
                     </a>
-                    <a href="#" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
+                    <a href="/services/hydraulik" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
                       Hydraulik
                     </a>
-                    <a href="#" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
+                    <a href="/services/pneumatik" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
                       Pneumatik
                     </a>
-                    <a href="#" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
+                    <a href="/services/pumpen" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
                       Pumpen
                     </a>
-                    <a href="#" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
+                    <a href="/services/kraene" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
                       Kräne
                     </a>
-                    <a href="#" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
+                    <a href="/services/kugellager" className="block px-4 py-2 text-sm text-[var(--color-medium-gray)] hover:bg-[var(--color-very-light-gray)] hover:text-[var(--color-brand-blue)]">
                       Kugellager
                     </a>
                   </div>
@@ -133,13 +143,13 @@ const Header = () => {
               </div>
 
               <a
-                href="#"
+                href="/impressum"
                 className="text-sm font-bold uppercase text-[var(--color-medium-gray)] hover:text-[var(--color-brand-blue)] transition-colors"
               >
                 Impressum
               </a>
               <a
-                href="#"
+                href="/en"
                 className="text-sm font-bold uppercase text-[var(--color-medium-gray)] hover:text-[var(--color-brand-blue)] transition-colors"
               >
                 English
