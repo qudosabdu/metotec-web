@@ -16,7 +16,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  outputFileTracingRoot: path.resolve(__dirname, '../../'),
+  // Removed `outputFileTracingRoot` which caused incorrect path resolution
+  // on some deployment environments (e.g. Vercel). Next.js will use the
+  // default tracing root which works for this project structure.
   typescript: {
     ignoreBuildErrors: true,
   },
